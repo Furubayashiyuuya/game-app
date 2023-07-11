@@ -15,6 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         
+    <Route path="/Styping" element={<SRyu/>}/>
+    <Route path="/Htyping" element={<HRRyu />}/>
+    <Route path="/HRtyping" element={<HR2Ryu/>}/>
     <Route path="/ITtyping" element={<ITWord />} />
       </Routes>
     </BrowserRouter>

@@ -10,7 +10,6 @@ import Home from './pages/Home';
 function App() {
   return (
     <>
-    <h1>aaaaa</h1>
     <BrowserRouter basename="/game-app">
       <Routes>
         <Route path="/" element={<Home />} />

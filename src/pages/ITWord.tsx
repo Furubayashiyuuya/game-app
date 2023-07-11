@@ -16,8 +16,7 @@ function ITWord() {
   
   return (
     <>
-    <h2>bbbbb</h2>
-      <Typing words={words} />
+    <Typing words={words} />
     </>
   );
 }

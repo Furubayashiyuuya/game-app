@@ -1,27 +1,18 @@
-import React from 'react';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import logo from './logo.svg';
-import ITWord from './pages/ITWord';
-import SRyu from './pages/SRyu';
-import HRRyu from './pages/HRRyu';
-import HR2Ryu from './pages/HR2Ryu';
-import Home from './pages/Home';
-
 function App() {
+
+  const React = require('react');
+  const {  BrowserRouter, Routes, Route } = require('react-router-dom');
+  const Home = require('./pages/Home');
+  const My = require('./pages/My');
+  
   return (
-    <>
-    <BrowserRouter basename="/game-app">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        
-    <Route path="/Styping" element={<SRyu/>}/>
-    <Route path="/Htyping" element={<HRRyu />}/>
-    <Route path="/HRtyping" element={<HR2Ryu/>}/>
-    <Route path="/ITtyping" element={<ITWord />} />
-      </Routes>
-    </BrowserRouter>
-    </>
+    React.createElement(BrowserRouter, { basename: "/ssrmy-app" },
+      React.createElement(Routes, null,
+        React.createElement(Route, { path: "/", element: React.createElement(Home) }),
+        React.createElement(Route, { path: "/My", element: React.createElement(My) })
+      )
+    )
   );
 }
 
-export default App;
+module.exports = App;

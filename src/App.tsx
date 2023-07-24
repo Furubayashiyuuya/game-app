@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 4c75941651f1f332f10776a5a113ac597dfaf841
 function App() {
 
   const React = require('react');

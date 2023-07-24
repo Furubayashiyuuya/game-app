@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import Typing from "./Typing";
 
 function HRRyu() {
+const React = require('react');
+const Typing = require("./Typing.tsx");
+
   const words = [
     "セクシャル・ハラスメント","Hanako","DODA","まじめ×ゆかい","濡れ落葉","オバタリアン/オバタリアン旋風","ケジメ","24時間タタカエマスカ","イカ天","こんなん出ましたけど～","「壁」開放","平成","ＮＯと言える日本",
     "ファジィ","“ブッシュ”ホン","オヤジギャル","アッシーくん","ちびまる子ちゃん","バブル経済","一番搾り","パスポートサイズ","愛される理由","昭和生まれの明治男","気象観測史上","スペシャルゲスト",
@@ -29,10 +29,8 @@ function HRRyu() {
 
   
   return (
-    <>
-      <Typing words={words} />
-    </>
+    React.createElement(React.Fragment, null, React.createElement(Typing, { words: words }))
   );
 }
 
-export default HRRyu;
+module.exports = HRRyu;

@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <div id="root">${html}</div>
-        <script src="./client.js"></script>
+        <script src="client.js"></script>
       </body>
     </html>
   `);
@@ -49,7 +49,7 @@ app.get('/game-app/ITtyping', (req, res) => {
       </head>
       <body>
         <div id="root">${html}</div>
-        <script src="./client.js"></script>
+        <script src="client.js"></script>
       </body>
     </html>
   `);

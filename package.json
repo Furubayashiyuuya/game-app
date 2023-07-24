@@ -1,6 +1,6 @@
 {
-  "name": "game-app",
-  "homepage": "/game-app",
+  "name": "ssrmy-app",
+  "homepage": "/ssrmy-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

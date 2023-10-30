@@ -12,7 +12,7 @@ function ITWord() {
    "可用性","機密性","完全性","保守性","クロスサイトスプリング",
    "SQL","Java","React","CSS","JavaScript",
    "C#","C+","PHP","Ruby","HTML",
-   "Python","Go","AWS","Linux"
+   "Python","Go","AWS","Linux","git",
   ]
 
   

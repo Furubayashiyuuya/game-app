@@ -32,7 +32,7 @@ function Home() {
   return (
 
     React.createElement('div', {style:styles.body},
-    React.createElement('main', {style:styles.main},
+ React.createElement('main', {style:styles.main},
       React.createElement('h1', { className: 'title' }, 'タイピングゲーム'),
       React.createElement('button',{ className: 'gamebutton' }, React.createElement('a', { href: '/game-app/ITtyping' }, 'IT用語')),
       React.createElement('button', { className: 'gamebutton' }, React.createElement('a', {href: '/game-app/Styping' }, '流行語・受賞語(昭和)')),

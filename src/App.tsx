@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function App() {
 
   const React = require('react');
@@ -33,23 +34,32 @@ import HRRyu from './pages/HRRyu';
 import HR2Ryu from './pages/HR2Ryu';
 import ITWord from './pages/ITWord';
 
+=======
+>>>>>>> 86f7fb772bc3d74c895310750775819e3de808c3
 function App() {
+
+  const React = require('react');
+  const {  BrowserRouter, Routes, Route } = require('react-router-dom');
+  const Home = require('./pages/Home');
+  const SRyu = require('./pages/SRyu');
+  const HRRyu = require('./pages/HRRyu');
+  const HR2Ryu = require('./pages/HR2Ryu');
+  const ITWord = require('./pages/ITWord');
+  
   return (
-    <>
-    <BrowserRouter basename="/game-app">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        
-    <Route path="/Styping" element={<SRyu/>}/>
-    <Route path="/Htyping" element={<HRRyu />}/>
-    <Route path="/HRtyping" element={<HR2Ryu/>}/>
-    <Route path="/ITtyping" element={<ITWord />} />
-      </Routes>
-    </BrowserRouter>
-    </>
+    React.createElement(BrowserRouter, { basename: "/game-app" },
+      React.createElement(Routes, null,
+        React.createElement(Route, { path: "/", element: React.createElement(Home) }),
+        React.createElement(Route, { path: "/Styping", element: React.createElement(SRyu) }),
+        React.createElement(Route, { path: "/Htyping", element: React.createElement(HRRyu) }),
+        React.createElement(Route, { path: "/HRtyping", element: React.createElement(HR2Ryu) }),
+        React.createElement(Route, { path: "/ITtyping", element: React.createElement(ITWord) })
+      )
+    )
   );
 }
 
+<<<<<<< HEAD
 export default App;
 */
 /*
@@ -74,3 +84,6 @@ function App() {
 export default App;
 
 */
+=======
+module.exports = App;
+>>>>>>> 86f7fb772bc3d74c895310750775819e3de808c3

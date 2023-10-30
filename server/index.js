@@ -49,7 +49,7 @@ app.get('/game-app/ITtyping', (req, res) => {
       </head>
       <body>
         <div id="root">${html}</div>
-        <script src="./client.js"></script>
+        <script src="client.js"></script>
       </body>
     </html>
   `);
@@ -122,49 +122,3 @@ app.listen(9000, 'localhost', () => {
   console.log(`Server running at 9000`);
 });
 
-/*require('@babel/register');
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
-const Home = require('../src/pages/Home.tsx').default;
-
-const server = http.createServer((req, res) => {
-  const html = ReactDOMServer.renderToString(React.createElement(Home));
-  const indexFile = path.resolve(__dirname, '..', 'dist', 'index.html');
-
-  fs.readFile(indexFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading index.html:', err);
-      res.statusCode = 500;
-      res.end('Internal Server Error');
-      return;
-    }
-
-    const renderedHtml = data.replace('<div id="app"></div>', `<div id="app">${html}</div>`);
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end(renderedHtml);
-  });
-});
-
-server.listen(9000, 'localhost', () => {
-  console.log(`Server running at http://localhost:9000`);
-});
-*/
-/*
-class Hello extends React.Component {
-  render() {
-    return React.createElement('h1', null, 'Hello, Server-side Rendering!');
-  }
-}
-*/
-/*
-const server = http.createServer((req, res) => {
-  const html = ReactDOMServer.renderToString(React.createElement(Hello));
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end(html);
-});
-*/

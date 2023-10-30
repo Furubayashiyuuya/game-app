@@ -8,6 +8,7 @@ function Typing({ words }: { words: string[] }) {
   const [time, setTime] = useState(300);
   const [isPlaying, setisPlaying] = useState(false);
   const [currentWord, setCurrentWord] = useState("");
+
   
   let Addscore =0;
   useEffect(() => {

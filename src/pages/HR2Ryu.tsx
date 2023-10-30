@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Typing from "./Typing";
-
 function HR2Ryu() {
+
+  const React = require('react'); 
+ const Typing = require ("./Typing.tsx");
+  
   const words = [
     "政権交代",  "こども店長",  "事業仕分け",  "新型インフルエンザ",  "草食男子",  "脱官僚",  "派遣切り","ファストファッション",  "ぼやき",  "歴女",
     "ゲゲゲの～",  "いい質問ですねぇ",  "イクメン",  "AKB48",  "女子会",  "脱小沢", "食べるラー油", "ととのいました",  "～なう",  "無縁社会",  "何か持っていると言われ続けてきました。今日何を持っているかを確信しました…それは仲間です。" ,
@@ -21,10 +22,8 @@ function HR2Ryu() {
 
   
   return (
-    <>
-      <Typing words={words} />
-    </>
+    React.createElement(React.Fragment, null, React.createElement(Typing, { words: words }))
   );
 }
 
-export default HR2Ryu;
+module.exports = HR2Ryu;

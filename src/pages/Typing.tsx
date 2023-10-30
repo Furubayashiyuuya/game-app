@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import './Typing.css';
-import { Link } from "react-router-dom";
+const React = require('react'); 
 function Typing({ words }: { words: string[] }) {
+  
+  const { useEffect, useState } = require ("react");
+
   const [text, setText] = useState("");
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(300);
@@ -14,7 +15,7 @@ function Typing({ words }: { words: string[] }) {
 
     if (isPlaying && time > 0) {
       countdown = setInterval(() => {
-        setTime((prevTime) => prevTime - 1);
+        setTime((prevTime:any) => prevTime - 1);
       }, 1000);
     }
 
@@ -42,7 +43,7 @@ function Typing({ words }: { words: string[] }) {
       }else{
       Addscore = wordLength*5
       }
-      setScore((prevScore) => prevScore + Addscore);
+      setScore((prevScore:any) => prevScore + Addscore);
       setText("");
       setCurrentWord(getRandomWord());
     }
@@ -71,28 +72,58 @@ function Typing({ words }: { words: string[] }) {
     alert("endgame");
   };
 
-  return (
-    <div className="Typing">
-      <h1>Typing Game</h1>
-      <p>Score: {score}</p>
-      <p>Time: {time}</p>
-      {time === 0 && <p>Game Over!</p>}
-      {isPlaying ? (
-        <div>
-          <p className="word">{currentWord}</p>
-          <input
-            type="text"
-            value={text}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyPress}
-          />
-        </div>
-      ) : (
-        <button className="startbutton" onClick={Gamestart}>Start Game</button>
-      )}
-      <button><Link to="/" >戻る</Link></button>
-    </div>
-  );
-}
 
-export default Typing;
+  const styles = {
+    Typing: {
+      marginTop: '10%',
+      backgroundColor: 'black',
+      color: 'white',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    button: {
+      fontSize: '30px',
+      marginTop: '15px',
+    },
+    p: {
+      fontSize: '30px',
+    },
+    h1: {
+      fontSize: '50px',
+    },
+    word: {
+      textAlign: 'center',
+    },
+    startButton: {
+      fontSize: '30px',
+    },
+  };
+
+  return (
+    React.createElement('div', { style:styles.Typing,className: 'Typing' },
+    React.createElement('h1', {style:styles.h1}, 'Typing Game'),
+    React.createElement('p', {style:styles.p}, 'Score: ', score),
+    React.createElement('p', {style:styles.p}, 'Time: ', time),
+    time === 0 && React.createElement('p', null, 'Game Over!'),
+    isPlaying ? (
+      React.createElement('div', null,
+        React.createElement('p', { style:styles.p,className: 'word' }, currentWord),
+        React.createElement('input', {
+          type: 'text',
+          value: text,
+          onChange: handleInputChange,
+          onKeyDown: handleKeyPress,
+        })
+      )
+    ) : (
+      React.createElement('button', {style:styles.startButton, className: 'startbutton', onClick: Gamestart }, 'Start Game')
+    ),
+    React.createElement('button', null, React.createElement('a', {href: '/game-app' }, '戻る'))
+  )
+  )
+
+  
+}
+module.exports = Typing;

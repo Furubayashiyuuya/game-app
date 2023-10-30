@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import Typing from "./Typing";
 
 function SRyu() {
+
+  const React = require('react'); 
+ const Typing = require ("./Typing.tsx");
+  
+
   const words = [
     "オシンドローム","鈴虫発言","スキゾ・パラノ","特殊浴場","まるきん","まるび","くれない族","疑惑","千円パック","す・ご・い・で・す・ネッ","教官!",
     "分衆","パフォーマンス","NTT","キャバクラ","言語戦略","ネバカ","イッキ!イッキ!","トラキチ","角抜き","私はコレで会社をやめました","投げたらアカン","100ドルショッピング","愛しているからチラいのよ",
@@ -13,10 +15,8 @@ function SRyu() {
 
   
   return (
-    <>
-      <Typing words={words} />
-    </>
+ React.createElement(React.Fragment, null, React.createElement(Typing, { words: words }))
   );
 }
 
-export default SRyu;
+module.exports =SRyu;
